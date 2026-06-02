@@ -1,0 +1,249 @@
+:root {
+  --bg: #f8f1ed;
+  --surface: #ffffff;
+  --text: #20323b;
+  --muted: #6b7d84;
+  --primary: #ef7d3f;
+  --secondary: #f4b183;
+  --danger: #d9534f;
+  --success: #4caf50;
+  --border: #f1d6c5;
+  --accent: #fff5ef;
+  --shadow: 0 20px 50px rgba(33, 50, 63, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #fff6f1 0%, #fde8df 32%, #f8f1ed 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at top right, rgba(239, 125, 63, 0.12) 0%, transparent 30%),
+    radial-gradient(circle at bottom left, rgba(76, 175, 80, 0.08) 0%, transparent 20%);
+  pointer-events: none;
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+header {
+  background: linear-gradient(180deg, #ffffff 0%, #fff1ea 100%);
+  border: 1px solid rgba(239, 125, 63, 0.18);
+  border-radius: 32px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  color: #d35400;
+}
+
+header p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.input-panel,
+.actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.input-panel {
+  grid-template-columns: 1.2fr 0.7fr 0.8fr auto;
+}
+
+.input-group {
+  display: grid;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #9d6a4e;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+button#addButton,
+button.secondary {
+  font: inherit;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fff8f4 0%, #ffe8d8 100%);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]::placeholder {
+  color: #b07759;
+}
+
+button {
+  border: none;
+  border-radius: 18px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+  box-shadow: 0 14px 28px rgba(33, 50, 63, 0.08);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button#addButton {
+  background: linear-gradient(135deg, var(--primary), #d95b2f);
+  color: white;
+}
+
+button.secondary {
+  background: white;
+  color: var(--text);
+  border: 1px solid rgba(146, 104, 68, 0.18);
+}
+
+.helper-text {
+  padding: 12px 18px;
+  border-radius: 18px;
+  background: rgba(255, 236, 227, 0.85);
+  color: #7b5a44;
+  border: 1px solid rgba(239, 125, 63, 0.12);
+}
+
+.summary-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 18px 20px;
+  margin-top: 18px;
+  border-radius: 18px;
+  background: #fff7f1;
+  border: 1px solid rgba(239, 125, 63, 0.12);
+  color: #8c5b43;
+  font-weight: 700;
+}
+
+.list-panel {
+  margin-top: 24px;
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shopping-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 24px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #fffdfa 0%, #fff1e8 100%);
+  border: 1px solid rgba(233, 148, 110, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 18px 32px rgba(76, 175, 80, 0.08);
+}
+
+.shopping-list li span {
+  display: block;
+  word-break: break-word;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.shopping-list li span.purchased {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.list-item-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.action-button {
+  min-width: 58px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: #fff5ef;
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(33, 50, 63, 0.08);
+}
+
+.action-button.purchase {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  color: white;
+}
+
+.action-button.delete {
+  background: linear-gradient(135deg, #e57373, #d32f2f);
+  color: white;
+}
+
+.shopping-list li::before {
+  content: '🛍️';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(239, 125, 63, 0.12);
+  font-size: 1.3rem;
+}
+
+@media (max-width: 520px) {
+  .input-panel,
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .shopping-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .shopping-list li::before {
+    margin-bottom: 12px;
+  }
+
+  .list-item-actions {
+    justify-content: flex-end;
+  }
+}

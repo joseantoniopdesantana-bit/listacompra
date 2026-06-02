@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <h1>Lista de Compras</h1>
+      <h2>Coloque seus itens aqui</h2>
+      <p>Adicione itens, informe a quantidade e a unidade para organizar suas compras de forma rápida.</p>
+    </header>
+
+    <section class="input-panel">
+      <div class="input-group">
+        <label for="itemInput">Produto</label>
+        <input id="itemInput" type="text" placeholder="Ex: arroz, leite, banana" />
+      </div>
+      <div class="input-group">
+        <label for="quantityInput">Quantidade</label>
+        <input id="quantityInput" type="number" min="0.1" step="0.1" value="1" />
+      </div>
+      <div class="input-group">
+        <label for="unitSelect">Unidade</label>
+        <select id="unitSelect">
+          <option value="unidade">unidade(s)</option>
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+          <option value="l">litro(s)</option>
+          <option value="ml">ml</option>
+          <option value="pacote">pacote(s)</option>
+        </select>
+      </div>
+      <button id="addButton">Adicionar</button>
+    </section>
+
+    <section class="helper-text">
+      <p>Use Enter em qualquer campo para adicionar mais rápido.</p>
+    </section>
+
+    <section class="actions">
+      <button id="clearButton" class="secondary">Limpar lista</button>
+      <button id="togglePurchasedButton" class="secondary">Ocultar itens comprados</button>
+    </section>
+
+    <section class="summary-panel">
+      <span id="totalCount">Total de itens: 0</span>
+      <span id="remainingCount">A comprar: 0</span>
+    </section>
+
+    <section class="list-panel">
+      <ul id="shoppingList" class="shopping-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
